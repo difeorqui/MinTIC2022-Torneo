@@ -1,0 +1,8 @@
+Digital Ocean
+user: root
+pass: Vampy3000Vampy
+
+VM
+--------------
+user: dfoq
+pass: Difeorqui3000
