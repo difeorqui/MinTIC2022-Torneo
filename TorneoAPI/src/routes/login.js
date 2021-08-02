@@ -4,6 +4,7 @@ const express = require('express');
 const moment = require('moment');
 const jwt = require('jwt-simple');
 const router = express.Router();
+require('dotenv').config();
 
 const crearToken = (usuario) => {
     const obj = {

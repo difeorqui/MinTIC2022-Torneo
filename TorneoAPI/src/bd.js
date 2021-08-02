@@ -3,6 +3,7 @@ const modelUsuario = require('./models/usuarios');
 const modelEquipo = require('./models/equipos');
 const modelPartido = require('./models/partidos');
 const modelVistaResultados = require('./models/resultados');
+require('dotenv').config();
 
 const sequelize = new Sequelize (process.env.BD_NAME, process.env.USER, process.env.PASS, {
     host: process.env.BD_CNN,
