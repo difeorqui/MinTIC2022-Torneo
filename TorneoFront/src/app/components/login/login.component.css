@@ -1,0 +1,25 @@
+form {
+  width: 350px;
+}
+
+/* Botón de registro */
+.registrarbtn {
+  padding: 10px 18px;
+  background-color: rgb(39, 65, 180);
+}
+
+/* Centrar el avatar al contenedor */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* tamaño del avatar */
+img.avatar {
+  width: 80%;
+  border-radius: 10%;
+}
+
+.container {
+  padding: 4px;
+}

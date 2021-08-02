@@ -1,0 +1,48 @@
+<div class="container-body">
+  <form [formGroup]="actualForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+      <h1>Nuevo usuario</h1>
+      <hr>
+
+      <div class="row-inline">
+        <label for="nombre">Nombre:</label>
+        <input type="text" placeholder="Ingresa tu nombre completo" name="nombre" formControlName="nombre" required>
+      </div>
+
+      <div class="row-inline">
+        <label for="email">Correo:</label>
+        <input type="text" placeholder="Correo electrónico" name="email" formControlName="correo" required>
+      </div>
+
+      <div class="row-inline">
+        <label for="uname">Usuario:</label>
+        <input type="text" placeholder="Ingresa tu usuario" name="uname" formControlName="username" required>
+      </div>
+
+      <div class="row-inline">
+        <label for="psw">Contraseña:</label>
+        <div class="input-container">
+          <i [class]="hide ? iconSlash: iconEye" (click)="hide = !hide"></i>
+          <input class="input-field" [type]="hide ? 'password' : 'text'" placeholder="Ingresa tu contraseña" name="usrnm" formControlName="password" required>
+        </div>
+      </div>
+
+      <div class="alert success" *ngIf="mensajeSuccess != ''">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';" (click)="mensajeSuccess=''">&times;</span>
+        {{mensajeSuccess}}
+      </div>          
+      <div class="alert" *ngIf="mensajeError != ''">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';" (click)="mensajeError=''">&times;</span>
+        {{mensajeError}}
+      </div>          
+    
+      <div class="clearfix">
+        <div class="buttonCenterInline">
+          <button type="button" class="cancelbtn" (click)="irALogin()">Cancelar</button>
+          <button type="submit" class="signupbtn" *ngIf="!form.invalid" >Registrar</button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>

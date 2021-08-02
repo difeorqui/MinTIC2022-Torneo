@@ -1,0 +1,74 @@
+<div class="container-body">
+  <form [formGroup]="actualForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+      <h1>Registrar partido</h1>
+      <hr>
+
+      <div class="row-inline">
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" formControlName="fecha" [readonly]="soloGoles()">
+      </div>
+
+      <ng-template *ngIf="soloGoles(); then mostrarGolesLocal; else noMostrarGolesLocal"></ng-template>
+      <ng-template #mostrarGolesLocal>
+        <div class="row-inline">
+          <label for="local">Equipo local</label>
+          <input type="text" placeholder="Equipo local" name="local" formControlName="local" readonly>
+        </div>
+      </ng-template>
+      <ng-template #noMostrarGolesLocal>
+        <div class="row-inline">
+          <label for="local">Equipo local</label>
+          <select id="country" name="local" formControlName="local">
+            <option selected>--Selecciona--</option>
+            <option *ngFor="let item of equipos" [value]="item.id">{{item.nombre}}</option>
+          </select>
+        </div>
+      </ng-template>
+
+      <div class="row-inline" *ngIf="soloGoles()">
+        <label for="golesLocal">Goles equipo local:</label>
+        <input type="text" placeholder="Golos del local" name="golesLocal" formControlName="goles_local">
+      </div>
+
+      <ng-template *ngIf="soloGoles(); then mostrarGolesVisitante; else noMostrarGolesVisitante"></ng-template>
+      <ng-template #mostrarGolesVisitante>
+        <div class="row-inline">
+          <label for="local">Equipo visitante</label>
+          <input type="text" placeholder="Equipo visitante" name="visitante" formControlName="visitante" readonly>
+        </div>
+      </ng-template>
+      <ng-template #noMostrarGolesVisitante>
+        <div class="row-inline">
+          <label for="visitante">Equipo visitante</label>
+          <select id="country" name="visitante" formControlName="visitante">
+            <option selected>--Selecciona--</option>
+            <option *ngFor="let item of equipos" [value]="item.id">{{item.nombre}}</option>
+          </select>
+        </div>
+      </ng-template>
+
+      <div class="row-inline" *ngIf="soloGoles()">
+        <label for="golesVisitante">Goles equipo visitante:</label>
+        <input type="text" placeholder="Golos del Visitante" name="golesVisitante" formControlName="goles_visitante">
+      </div>
+
+      <div class="alert success" *ngIf="mensajeSuccess != ''">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';"
+          (click)="mensajeSuccess=''">&times;</span>
+        {{mensajeSuccess}}
+      </div>
+      <div class="alert" *ngIf="mensajeError != ''">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';"
+          (click)="mensajeError=''">&times;</span>
+        {{mensajeError}}
+      </div>
+      <div class="clearfix">
+        <div class="buttonCenterInline">
+          <button type="button" class="cancelbtn" (click)="irAResultados()">Cancelar</button>
+          <button type="submit" class="signupbtn" *ngIf="!form.invalid">Registrar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,28 @@
+<div class="container-body">
+  <div class="alert" *ngIf="mensajeError != ''">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';" (click)="mensajeError=''">&times;</span>
+    {{mensajeError}}
+  </div>          
+
+  <form [formGroup]="actualForm" novalidate (ngSubmit)="onSubmit()">
+        <div class="imgcontainer">
+          <img src="https://depor.com/resizer/mA_pXu12ixyGzCpAnNFiZ4B5KGA=/620x0/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/3WI45B4YWBGDFOU5SHWMR3LPFU.jpg" alt="Avatar" class="avatar">
+        </div>
+      
+        <div class="container">
+          <label for="uname"><strong>Usuario</strong></label>
+          <input type="text" placeholder="Ingresa tu usuario" name="uname" formControlName="username" required>
+      
+          <label for="psw"><strong>Contraseña</strong></label>
+          <input type="password" placeholder="Ingresa tu contraseña" name="psw" formControlName="password" required>
+      
+          <button type="submit">Login</button>
+        </div>
+      
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" class="registrarbtn" (click)="irARegistrar()">Registrar</button>
+        </div>
+    </form>
+</div>
+
+

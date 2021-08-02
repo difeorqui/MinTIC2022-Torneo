@@ -1,0 +1,50 @@
+<div class="container-body">
+    <form [formGroup]="actualForm" (ngSubmit)="onSubmit()">
+      <div class="container">
+        <h1>Crear equipo</h1>
+        <hr>
+  
+        <div class="row-inline">
+          <label for="nombre">Nombre:</label>
+          <input type="text" placeholder="Nombre del equipo" name="nombre" formControlName="nombre" required>
+        </div>
+  
+        <div class="alert success" *ngIf="mensajeSuccess != ''">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';" (click)="mensajeSuccess=''">&times;</span>
+          {{mensajeSuccess}}
+        </div>          
+        <div class="alert" *ngIf="mensajeError != ''">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';" (click)="mensajeError=''">&times;</span>
+          {{mensajeError}}
+        </div>          
+      
+        <div class="clearfix">
+          <div class="buttonCenterInline">
+            <button type="button" class="cancelbtn" (click)="irAResultados()">Cancelar</button>
+            <button type="submit" class="signupbtn" *ngIf="!form.invalid" >Registrar</button>
+          </div>
+        </div>
+  
+      </div>
+
+      <div class="scrollable">
+        <table>
+          <tr>
+            <th>Opciones</th>
+            <th>Id</th>
+            <th>Equipo</th>
+          </tr>
+          <tr *ngFor="let item of equipos">
+            <td>
+              <i class="fas fa-edit" (click)="editItem(item)" ></i>
+              <i class="far fa-trash-alt" (click)="deleteItem(item.id)"></i>
+            </td>
+            <td>{{item.id}}</td>
+            <td>{{item.nombre}}</td>
+          </tr>
+        </table>
+      </div>
+
+    </form>
+  </div>
+  

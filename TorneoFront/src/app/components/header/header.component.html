@@ -1,0 +1,13 @@
+<div class="box" *ngIf="isLogged()">
+  <button class="btnBlock" type="button" (click)="irACrearEquipo()" style="margin-left: 10px;">Registrar Equipo</button>
+  <button class="btnBlock" type="button" (click)="irARegistrar()">Registrar Partido</button>
+  <button class="btnBlock" type="button" (click)="irAResultados()">Ver Partidos</button>
+
+  <div class="input-container">
+    <i class="fas fa-portrait"></i>
+    <span>{{nombreUsuario()}}</span>
+  </div>
+
+
+  <button class="btnBlock cerrarSesion" type="button" (click)="logOut()">Cerrar sesión</button>
+</div>

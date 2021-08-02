@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Tamaño mínimo para los labels y en negrilla */
+  label {
+    width: 170px;
+    font-weight: 600;
+  }
+  
+  /* Botón cancelar resaltado */
+  .cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+  }
+  
+  /* Botones de cancelar y registrar */
+  .buttonCenterInline {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cancelbtn,
+  .signupbtn {
+    display: block;
+    float: left;
+    width: 25%;
+    margin: 2px;
+  }
+  
+  .container {
+    padding: 16px;
+  }
+  
+  /* Limpia los floats para que los botones no se salgan del área*/
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Cambiar el estilo de los botones para pantallas muy pequeñas */
+  @media screen and (max-width: 300px) {
+    .cancelbtn,
+    .signupbtn {
+      width: 100%;
+    }
+  }
+  

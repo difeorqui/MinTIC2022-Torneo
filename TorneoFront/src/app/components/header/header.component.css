@@ -1,0 +1,34 @@
+.box {
+  padding: 10px;
+  background-color: rgb(39, 65, 180);
+  color: white;
+  border: 2px solid;
+  border-radius: 25px;
+}
+
+button.cerrarSesion {
+  float: right;
+  margin-right: 10px;
+}
+
+/* Contenedor del ícono */
+.input-container {
+  float: right;
+  margin-top: 5px;
+}
+
+/* ícono */
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+  margin: 8px 0 8px 0;
+}
+
+/* Usado para el nombre del usuario */
+span {
+  padding-left: 10px;
+  padding-right: 10px;
+}

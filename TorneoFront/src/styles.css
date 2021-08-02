@@ -1,0 +1,139 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Formularios con borde */
+form {
+  border: 3px solid #f1f1f1;
+  margin: 0px auto;
+}
+
+/* Contenedores */
+.container-body {
+  margin-right: 10px;
+  padding: 10px;
+  height: auto;
+  background-color: #ffffff;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+/* Labels e Inputs en la misma fila */
+.row-inline {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.row-inline label {
+  margin-right: 10px;
+}
+
+/* Títulos */
+h1 {
+  color: #375e97;
+  font-size: 2em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+/* Separador */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 15px;
+}
+
+/* Botones */
+button {
+  background-color: #04aa6d;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.btnBlock {
+  width: auto;
+  padding: 7px 10px;
+  margin: 0px 2px 0px 2px;
+  border-radius: 6px;
+}
+
+/* Textos */
+/* Todos los inputs, selects ocupan el 100% del espacio */
+input[type="text"],
+input[type="password"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #ebf1eb;
+  outline: none;
+}
+
+/* Tablas */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+/* Los íconos van separados y con el puntero de la manito */
+td>i {
+  padding-left:10px;
+  cursor: pointer;
+}
+/* Efecto zebra*/
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Alerts */
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+}
+.alert.success {background-color: #04AA6D;}
+.alert.info {background-color: #2196F3;}
+.alert.warning {background-color: #ff9800;}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}

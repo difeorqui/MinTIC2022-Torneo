@@ -1,0 +1,38 @@
+<div class="container-body">
+  <div class="container">
+    <h1>Resultados</h1>
+    <hr>
+    <div class="scrollable">
+      <div class="alert success" *ngIf="mensajeSuccess != ''">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';" (click)="mensajeSuccess=''">&times;</span>
+        {{mensajeSuccess}}
+      </div>
+      <div class="alert" *ngIf="mensajeError != ''">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';" (click)="mensajeError=''">&times;</span>
+        {{mensajeError}}
+      </div>
+          <table>
+        <tr>
+          <th>Opciones</th>
+          <th>Fecha</th>
+          <th>Equipo local</th>
+          <th>Goles</th>
+          <th>Equipo visitante</th>
+          <th>Goles</th>
+        </tr>
+        <tr *ngFor="let item of partidos">
+          <td>
+            <i *ngIf="validarEdit(item)" class="fas fa-edit" (click)="editItem(item)"></i>
+            <i class="far fa-trash-alt" (click)="deleteItem(item.idPartido)"></i>
+          </td>
+          <td>{{item.fecha}}</td>
+          <td>{{item.local}}</td>
+          <td>{{item.goles_local}}</td>
+          <td>{{item.visitante}}</td>
+          <td>{{item.goles_visitante}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>
