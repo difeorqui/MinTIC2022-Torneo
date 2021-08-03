@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl: "http://localhost:4000",
+  apiUrl: "http://api.dfoq.xyz:4100",
   login: "/api/login",
   registrarUsario: "/api/usuario",
   equipo: "/api/equipo",
