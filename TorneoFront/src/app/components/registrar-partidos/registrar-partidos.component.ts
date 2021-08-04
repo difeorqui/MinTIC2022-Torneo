@@ -157,7 +157,8 @@ export class RegistrarPartidosComponent implements OnInit {
     } else if (this.local.value == this.visitante.value ){ 
       this.mensajeError = 'Los equipos deben ser diferentes!';
       return false;
-    } else if (!this.paramPartido){
+    } else if (this.paramPartido){
+      console.log(this.paramPartido);
       try {
         let goles:number = parseInt(this.paramPartido.goles_local); 
         goles = parseInt(this.paramPartido.goles_visitante); 
@@ -179,6 +180,7 @@ export class RegistrarPartidosComponent implements OnInit {
     if (!this.validarErrores()){
       return;
     }
+
     let partido:IPartido = this.form.value;
     if (!this.paramPartido){
       delete partido.goles_local;
@@ -193,6 +195,10 @@ export class RegistrarPartidosComponent implements OnInit {
         }
       )    
     } else {
+
+      const result = window.confirm(`Después de guardar los resultados no se pueden modificar.\n ¿Deseas continuar con el resultad ${partido.local} (${partido.goles_local}) - ${partido.visitante} (${partido.goles_visitante})?`);
+      if(!result) return;
+
       delete partido.fecha;
       delete partido.idPartido;
       delete partido.local;

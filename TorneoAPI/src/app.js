@@ -12,7 +12,7 @@ app.use(express.json());
 app.all('*', (req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type,Accept, Authortization');  
-    res.setHeader('Acces-Control-Allow-Methods','GET, POST, PATCH, DELETE');
+    res.setHeader('Acces-Control-Allow-Methods','GET, POST, PUT, PATCH, DELETE');
     next();
 });
 
