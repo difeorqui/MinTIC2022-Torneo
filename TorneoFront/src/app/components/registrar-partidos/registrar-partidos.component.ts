@@ -122,6 +122,7 @@ export class RegistrarPartidosComponent implements OnInit {
   validarParametros() {
     this.route.queryParams
       .subscribe(params => {
+        this.paramPartido = undefined;
         const id = params['id'];
         if(id){
           this.srvPartido.consultarPartido(id)
@@ -158,7 +159,6 @@ export class RegistrarPartidosComponent implements OnInit {
       this.mensajeError = 'Los equipos deben ser diferentes!';
       return false;
     } else if (this.paramPartido){
-      console.log(this.paramPartido);
       try {
         let goles:number = parseInt(this.paramPartido.goles_local); 
         goles = parseInt(this.paramPartido.goles_visitante); 
