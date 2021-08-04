@@ -7,9 +7,15 @@ require('dotenv').config();
 require('./bd');
 
 app.set('port', process.env.PORT || 4000);
-
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
+app.all('*', (req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type,Accept, Authortization');  
+    res.setHeader('Acces-Control-Allow-Methods','GET, POST, PATCH, DELETE');
+    next();
+});
+
 
 // Rutas
 app.use('/api/equipo', validarToken, routes.equipoRoutes);
