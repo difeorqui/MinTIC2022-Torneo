@@ -1,5 +1,6 @@
 const express = require('express');
 const { check, validationResult } = require('express-validator');
+const validarToken = require('../middlewares/validarToken');
 const router = express.Router();
 const {Usuario} = require('../bd');
 
@@ -32,20 +33,20 @@ router.post('/', [
     }
 })
 
-router.put('/:id', async (req, res) => {
+router.put('/:id',validarToken, async (req, res) => {
     try {
         const id = req.params.id;
         await Usuario.update(
-            req.status(200).body,{
+            req.body,{
                 where: {id}
             });
-        res.json(1);
+        res.status(200).json(1);
     } catch (error) {
         return res.status(400).json(error);
     }
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', validarToken, async (req, res) => {
     try {
         const id = req.params.id;
         await Usuario.destroy({
