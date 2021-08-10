@@ -7,7 +7,7 @@ Para el desarrollo del sistema web se deben crear 2 proyectos (frontend y backen
 <p align="center"> Login</p>
 <p align="center"><img src="https://i.postimg.cc/nLxxgGRp/Torneo-Login.jpg"/></p> 
 
-## Clnar el repositorio
+## Clonar el repositorio
 
 * Crea una carpeta, ejemplo proyectos
 * Clona los proyectos: git clone https://github.com/difeorqui/MinTIC2022-Torneo
