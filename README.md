@@ -17,7 +17,7 @@ Para el desarrollo del sistema web se deben crear 2 proyectos (frontend y backen
 - - TorneoFront
 
 ## Instalación
-Para instalar las librerías, sólo ejecuta este comendo dentro de cada proyecto
+Para instalar las librerías, sólo ejecuta este comando dentro de cada proyecto
 ```bash
 npm install
 ```
