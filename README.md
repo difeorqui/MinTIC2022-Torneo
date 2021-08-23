@@ -3,7 +3,7 @@
 
 Para el desarrollo del sistema web se deben crear 2 proyectos (frontend y backend) y la información debe almacenarse en una base de datos relacional (preferiblemente MySQL o MariaDB), el desarrollador puede hacer uso de las herramientas o frameworks que considere necesarios, sin embargo, solo se permite el uso de frameworks soportados por los lenguajes de programación, Java o JavaScript (no se debe usar ningún otro lenguaje de programación)
 
-<h1 align="center"> Torne Inter Clases</h1>
+<h1 align="center"> Torneo Inter Clases</h1>
 <p align="center"> Login</p>
 <p align="center"><img src="https://i.postimg.cc/nLxxgGRp/Torneo-Login.jpg"/></p> 
 
